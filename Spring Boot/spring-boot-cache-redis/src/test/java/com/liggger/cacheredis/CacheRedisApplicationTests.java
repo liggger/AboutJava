@@ -14,8 +14,10 @@ class CacheRedisApplicationTests {
     UserService userService;
     @Test
     void contextLoads() {
-        User u1 = userService.getUserById(1, "aa");
-        User u2 = userService.getUserById(1, "bb");
+        userService.deleteUserById(1);
+        User u1 = userService.getUserById(1);
+        userService.deleteUserById(1);
+        User u2 = userService.getUserById(1);
         System.out.println(u1);
         System.out.println(u2);
     }
